@@ -1,16 +1,9 @@
 # YOLOv8 PPE Training (Helmet, Vest, Person)
 
-Custom dataset + training pipeline for building a PPE detection model (Hard Hat, Safety Vest, Person), used in the SAQ (Safe Vision Core) system.
+Custom dataset + training pipeline for building a PPE detection model.
 
-Includes:
-- dataset structure  
-- training script  
-- ready-to-run YOLO commands  
-- export to ONNX / TensorRT  
-
----
-
-## 🚀 Training command
-
-```bash
+## Train
 yolo detect train model=yolov8n.pt data=data/dataset.yaml epochs=100 imgsz=640 batch=16
+
+## Export
+yolo export model=runs/detect/train/weights/best.pt format=onnx
